@@ -14,3 +14,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.button:hover{
+  cursor:pointer;
+  color:orange;
+}
+
+.cancelbutton:hover{
+  cursor:pointer;
+  color:red;
+}
