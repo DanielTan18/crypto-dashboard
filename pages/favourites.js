@@ -1,4 +1,5 @@
 import { Table } from "react-bootstrap";
+import Image from 'next/image';
 import Container from "react-bootstrap/Container";
 import React, { useState, useEffect } from "react";
 import { Sparklines, SparklinesLine } from "react-sparklines";
@@ -61,12 +62,11 @@ export default function Favourites({ coins }) {
       </h3>
       <Table responsive striped bordered hover>
         <thead>
-          <tr>
+        <tr>
             <th> # </th>
             <th> Symbol </th>
             <th> Price </th>
             <th> Total Volume </th>
-            <th> Market Cap </th>
             <th> Last 7 Days</th>
           </tr>
         </thead>
@@ -85,15 +85,16 @@ export default function Favourites({ coins }) {
                   />
                 </td>
                 <td>
-                  <img
+                  <Image
                     src={coin.image}
-                    style={{ width: 25, height: 25, marginRight: 10 }}
+                    width={25}
+                    height={25}
                   />
-                  {coin.name} {coin.symbol.toUpperCase()}
-                </td>
+                
+                &ensp;{coin.name} {coin.symbol.toUpperCase()}
+              </td>
                 <td>{formatDollar(coin.current_price)}</td>
                 <td>${coin.total_volume.toLocaleString()}</td>
-                <td>{coin.market_cap}</td>
                 <td>
                   <Sparklines data={coin.sparkline_in_7d.price}>
                     <SparklinesLine

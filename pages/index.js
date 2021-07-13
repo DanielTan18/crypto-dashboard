@@ -1,4 +1,5 @@
-import { Table, Button, ButtonGroup, ToggleButton } from "react-bootstrap";
+import { Table } from "react-bootstrap";
+import Image from 'next/image';
 import Container from "react-bootstrap/Container";
 import React, { useState, useEffect } from "react";
 import { Sparklines, SparklinesLine } from "react-sparklines";
@@ -94,11 +95,13 @@ export default function Home({ coins }) {
                 />
               </td>
               <td>
-                <img
-                  src={coin.image}
-                  style={{ width: 25, height: 25, marginRight: 10 }}
-                />
-                {coin.name} {coin.symbol.toUpperCase()}
+                  <Image
+                    src={coin.image}
+                    width={25}
+                    height={25}
+                  />
+                
+                &ensp;{coin.name} {coin.symbol.toUpperCase()}
               </td>
 
               <td>{formatDollar(coin.current_price)}</td>
