@@ -55,12 +55,11 @@ export default function Home({ coins }) {
         localStorage.setItem("favArr", favArr);
       }
     }
-
+    
     alert(id.charAt(0).toUpperCase() + id.slice(1) +" has been added to favourites!");
   };
 
   useEffect(() => {
-
     console.log("favourite is " + favourite);
     console.log("local storage array is " + localStorage.getItem("favArr"));
   }, [favourite]);
